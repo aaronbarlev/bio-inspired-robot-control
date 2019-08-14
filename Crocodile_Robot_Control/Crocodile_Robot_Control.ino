@@ -1,12 +1,9 @@
+// Aaron Barlev 2019
+
 #include <MPU9250.h>
 #include <Servo.h>
 
 Servo servos[8];
-
-// IN CASE IT ISN'T WORKING:
-// 1. Try increasing (for more sensitive path adjustments) or decreasing K (for less sensitive adjustments)
-// 2. Try commenting out all sensor code
-// 3. Try increasing or decreasing sweep/lift_delay (for slower or faster stride rate)
 
 // Angle that the leg will move forward or backward at the hip (1/2 of the total sweep angle)
 int left_sweep = 8; // ADJUST
@@ -37,7 +34,7 @@ int lift_delay = 150;
 int sweep_delay = 150;
 
 // an MPU9250 object with the MPU-9250 sensor on I2C bus 0 with address 0x68
-MPU9250 IMU(Wire,0x68);
+MPU9250 IMU(Wire, 0x68);
 int status;
 
 void write_angles(double front_left_lift, double front_left_sweep, double back_right_lift, double back_right_sweep, 
